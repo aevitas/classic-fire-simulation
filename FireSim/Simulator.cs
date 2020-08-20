@@ -54,12 +54,12 @@ namespace FireSim
                                   simulation.Character.WorldBuffCriticalStrikeChance;
 
             var totalSpellDamage =
-                simulation.Character.SpellDamage + simulation.Character.WorldBuffCriticalStrikeChance;
+                simulation.Character.SpellDamage + simulation.Character.ConsumableSpellPower;
 
             for (int i = 0; i < simulation.FireballCount; i++)
             {
-                var critRoll = rng.Next(0, 100);
-                var missRoll = rng.Next(0, 100);
+                var critRoll = rng.NextDouble() * 100;
+                var missRoll = rng.NextDouble() * 100;
 
                 bool isCrit = critRoll <= totalCritChance;
                 bool isMiss = missRoll <= missChance;

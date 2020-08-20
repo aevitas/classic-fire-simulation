@@ -21,6 +21,13 @@ namespace FireSim
 
             sim.RunSimulation(new Simulation
             {
+                Character = CharacterStatistics.BestInSlotFlasked,
+                FireballCount = 25,
+                Iterations = 100000
+            });
+
+            sim.RunSimulation(new Simulation
+            {
                 Character = CharacterStatistics.BestInSlotUnbuffed,
                 FireballCount = 25,
                 Iterations = 100000
@@ -33,6 +40,12 @@ namespace FireSim
                 Iterations = 100000
             });
 
+            sim.RunSimulation(new Simulation
+            {
+                Character = CharacterStatistics.TierTwoFlasked,
+                FireballCount = 27, // Roughly a 10% proc chance on T2
+                Iterations = 100000
+            });
 
             sim.RunSimulation(new Simulation
             {

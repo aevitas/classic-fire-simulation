@@ -16,42 +16,70 @@ namespace FireSim
 
         public int WorldBuffCriticalStrikeChance { get; set; }
 
-        // https://classic.wowhead.com/gear-planner/mage/troll/AjwAAUuvAlRoA0uqBVVOBljKB1PVCFNgCVLCClRRC1TNDEvLDUuLDkuzD1jLEFR2EVRdElRj
+        // https://classic.wowhead.com/gear-planner/mage/troll/AjwAgUuvXmQCVGiDS6pfZYVTX045BljKh1PVXmQIU2CJUsJOKIpUUWH2C1TNDFVMDUuzDkuLD1jLkFR2WN0RVF0SVGM
         public static CharacterStatistics BestInSlotUnbuffed => new CharacterStatistics
         {
             Name = "Best In Slot (Unbuffed)",
-            CriticalStrikeChance = 11.65,
+            CriticalStrikeChance = 14.02 + 6,
             HitChance = 10 + 6,
-            SpellDamage = 543
+            SpellDamage = 660
         };
 
         public static CharacterStatistics BestInSlot => new CharacterStatistics
         {
-            Name = "Best In Slot (Unbuffed)",
-            CriticalStrikeChance = 11.65,
+            Name = "Best In Slot",
+            CriticalStrikeChance = 14.02 + 6,
             HitChance = 10 + 6,
-            SpellDamage = 543,
+            SpellDamage = 660,
             ConsumableSpellPower = 35 + 40,
-            WorldBuffCriticalStrikeChance = 5 + 5 + 3
+            WorldBuffCriticalStrikeChance = WorldBuffs.DragonSlayerCriticalStrikeChance +
+                                            WorldBuffs.SongflowerCriticalStrikeChance + WorldBuffs.DireMaulCritChance +
+                                            WorldBuffs.ZulGurubCritChance
         };
 
-        // https://classic.wowhead.com/gear-planner/mage/troll/AjwAAUISAlRoA0IVBUIUBkGyB0ITCEIQCUIWCkIRC1TNDEvLDUuLDkuzD1jLEFR2EVRdElRj
+        public static CharacterStatistics BestInSlotFlasked => new CharacterStatistics
+        {
+            Name = "Best In Slot (Flasked)",
+            CriticalStrikeChance = 14.02 + 6,
+            HitChance = 10 + 6,
+            SpellDamage = 660,
+            ConsumableSpellPower = 35 + 40 + 150,
+            WorldBuffCriticalStrikeChance = WorldBuffs.DragonSlayerCriticalStrikeChance +
+                                            WorldBuffs.SongflowerCriticalStrikeChance + WorldBuffs.DireMaulCritChance +
+                                            WorldBuffs.ZulGurubCritChance
+        };
+
+        // https://classic.wowhead.com/gear-planner/mage/troll/AjwAgUISXmQCVGiDQhVfZYVCFE45BkGyh0ITXmQIQhCJQhZOKIpCEWH2C1TNDEvLDUuzDkuLD1jLkFR2WN0RVF0SVGM
         public static CharacterStatistics TierTwoUnbuffed => new CharacterStatistics
         {
-            Name = "Tier 2 (Unbuffed)",
-            CriticalStrikeChance = 11.73,
-            HitChance = 6 + 6,
-            SpellDamage = 474
+            Name = "Tier 2 (Unbuffed) - Forced Concentration",
+            CriticalStrikeChance = 12.71,
+            HitChance = 8 + 6,
+            SpellDamage = 582
         };
 
         public static CharacterStatistics TierTwo => new CharacterStatistics
         {
-            Name = "Tier 2",
-            CriticalStrikeChance = 11.73,
-            HitChance = 6 + 6,
-            SpellDamage = 474,
+            Name = "Tier 2 - Forced Concentration",
+            CriticalStrikeChance = 12.71,
+            HitChance = 8 + 6,
+            SpellDamage = 582,
             ConsumableSpellPower = 35 + 40,
-            WorldBuffCriticalStrikeChance = 5 + 5 + 3
+            WorldBuffCriticalStrikeChance = WorldBuffs.DragonSlayerCriticalStrikeChance +
+                                            WorldBuffs.SongflowerCriticalStrikeChance + WorldBuffs.DireMaulCritChance +
+                                            WorldBuffs.ZulGurubCritChance
+        };
+
+        public static CharacterStatistics TierTwoFlasked => new CharacterStatistics
+        {
+            Name = "Tier 2 - Forced Concentration (Flasked)",
+            CriticalStrikeChance = 12.71,
+            HitChance = 8 + 6,
+            SpellDamage = 582,
+            ConsumableSpellPower = 35 + 40 + 150,
+            WorldBuffCriticalStrikeChance = WorldBuffs.DragonSlayerCriticalStrikeChance +
+                                            WorldBuffs.SongflowerCriticalStrikeChance + WorldBuffs.DireMaulCritChance +
+                                            WorldBuffs.ZulGurubCritChance
         };
 
         public override string ToString()
