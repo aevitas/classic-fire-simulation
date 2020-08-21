@@ -1,0 +1,74 @@
+﻿{
+  "Simulations": [
+    // https://classic.wowhead.com/gear-planner/mage/troll/AjwAgUuvXmQCVGiDS6pfZYVTX045BljKh1PVXmQIU2CJUsJOKIpUUWH2C1TNDFVMDUuzDkuLD1jLkFR2WN0RVF0SVGM
+    {
+      "Iterations": 100000,
+      "FireballCount": 25,
+      "Character": {
+        "Name": "Best In Slot",
+        "CriticalStrikeChance": 20.02,
+        "HitChance": 16,
+        "SpellDamage": 660,
+        "ConsumableSpellPower": 75,
+        "WorldBuffCriticalStrikeChance": 16
+      }
+    },
+    {
+      "Iterations": 100000,
+      "FireballCount": 25,
+      "Character": {
+        "Name": "Best In Slot (Unbuffed)",
+        "CriticalStrikeChance": 20.02,
+        "HitChance": 16,
+        "SpellDamage": 660
+      }
+    },
+    {
+      "Iterations": 100000,
+      "FireballCount": 25,
+      "Character": {
+        "Name": "Best In Slot (Flasked)",
+        "CriticalStrikeChance": 20.02,
+        "HitChance": 16,
+        "SpellDamage": 660,
+        "ConsumableSpellPower": 225,
+        "WorldBuffCriticalStrikeChance": 16
+      }
+    },
+    // https://classic.wowhead.com/gear-planner/mage/troll/AjwAgUISXmQCVGiDQhVfZYVCFE45BkGyh0ITXmQIQhCJQhZOKIpCEWH2C1TNDEvLDUuzDkuLD1jLkFR2WN0RVF0SVGM
+    {
+      "Iterations": 100000,
+      "FireballCount": 25,
+      "Character": {
+        "Name": "Tier 2 - Forced Concentration",
+        "CriticalStrikeChance": 12.71,
+        "HitChance": 14,
+        "SpellDamage": 582,
+        "ConsumableSpellPower": 75,
+        "WorldBuffCriticalStrikeChance": 16
+      }
+    },
+    {
+      "Iterations": 100000,
+      "FireballCount": 25,
+      "Character": {
+        "Name": "Tier 2 - Forced Concentration (Unbuffed)",
+        "CriticalStrikeChance": 12.71,
+        "HitChance": 14,
+        "SpellDamage": 582
+      }
+    },
+    {
+      "Iterations": 100000,
+      "FireballCount": 25,
+      "Character": {
+        "Name": "Tier 2 - Forced Concentration (Flasked)",
+        "CriticalStrikeChance": 12.71,
+        "HitChance": 14,
+        "SpellDamage": 582,
+        "ConsumableSpellPower": 225,
+        "WorldBuffCriticalStrikeChance": 16
+      }
+    }
+  ]
+}

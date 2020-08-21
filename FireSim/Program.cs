@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -9,50 +11,13 @@ namespace FireSim
         static void Main(string[] args)
         {
             var services = CreateServiceProvider();
+            var configuration = new ConfigurationBuilder().AddJsonFile("simulations.json").Build();
 
-            var sim = services.GetRequiredService<Simulator>();
+            var simulations = configuration.GetSection("Simulations").Get<List<Simulation>>();
+            var simulator = services.GetRequiredService<Simulator>();
 
-            sim.RunSimulation(new Simulation
-            {
-                Character = CharacterStatistics.BestInSlot,
-                FireballCount = 25,
-                Iterations = 100000
-            });
-
-            sim.RunSimulation(new Simulation
-            {
-                Character = CharacterStatistics.BestInSlotFlasked,
-                FireballCount = 25,
-                Iterations = 100000
-            });
-
-            sim.RunSimulation(new Simulation
-            {
-                Character = CharacterStatistics.BestInSlotUnbuffed,
-                FireballCount = 25,
-                Iterations = 100000
-            });
-
-            sim.RunSimulation(new Simulation
-            {
-                Character = CharacterStatistics.TierTwo,
-                FireballCount = 27, // Roughly a 10% proc chance on T2
-                Iterations = 100000
-            });
-
-            sim.RunSimulation(new Simulation
-            {
-                Character = CharacterStatistics.TierTwoFlasked,
-                FireballCount = 27, // Roughly a 10% proc chance on T2
-                Iterations = 100000
-            });
-
-            sim.RunSimulation(new Simulation
-            {
-                Character = CharacterStatistics.TierTwoUnbuffed,
-                FireballCount = 27, // Roughly a 10% proc chance on T2
-                Iterations = 100000
-            });
+            foreach (var s in simulations)
+                simulator.RunSimulation(s);
 
             Console.ReadLine();
         }
