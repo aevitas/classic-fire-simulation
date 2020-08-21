@@ -1,0 +1,1 @@
+dotnet publish ./FireSim.sln -o="./publish/win-x64" -f="netcoreapp3.1" -p:PublishSingleFile=true  -c=Release --runtime win-x64
